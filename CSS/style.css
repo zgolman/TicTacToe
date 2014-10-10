@@ -1,6 +1,15 @@
+* {
+	position: relative;
+}
+
+
 html, body {	
 	height:100%;
 	background:black;
+}
+
+div {
+	position: relative;
 }
 
 .wrapper {
@@ -54,4 +63,21 @@ top: 37%;
 left: 3%;
 text-align: right;
 margin-right: 20%;
+}
+
+.wrap{
+	margin-left: 30%;
+	width: 50%;
+
+}
+
+.cell {
+	width: 25%; 
+	height: 150px; 
+	display: inline-block;
+	border: 2px solid black;
+}
+
+.clearFix {
+	clear:both;
 }

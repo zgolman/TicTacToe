@@ -1,27 +1,32 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" type="style/css" href="css/style.css">
-<script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-<script src ="js/apps.js"></script>
+<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+	<script src="js/main.js"></script>
 
 </head>
-<body>
-	<div class = "wrapper">
-		<div class = "header">
-			<p class = "title">TicTacToe</p>
-		</div>
-		<div class = "player1">
-			<p class = "p1">PLAYER 1</p>
-		</div>
-		<div class = "player2">
-			<p class ="p2">2 PLAYER</p>
-		<div>
-		<div class = "board">
+<body ng-app="ticApp" ng-controller="TTTController">
+	<div class="wrapper">
+			<div class="header">
+				<p class="title">TicTacToe</p>
+			</div>
+			<div class="player1">
+				<p class="p1">PLAYER 1</p>
+			</div>
+			<div class="player2">
+				<p class="p2">2 PLAYER</p>
+			</div> 
+			<div class ="wrap">
+			    <div class="cell" ng-repeat="mySingleCell in board"
+			    ng-class="{clearFix: (mySingleCell.pos % 3) == 0}"
+			    ng-click="makeMove()">
+				{{mySingleCell.status }}
+		       </div>  
+			<div>
+	</div>	
 
-		</div>
-	</div>
-	sdjsdjsd
+
 		
 
 </body>
