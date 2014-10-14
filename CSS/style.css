@@ -65,19 +65,42 @@ text-align: right;
 margin-right: 20%;
 }
 
-.wrap{
-	margin-left: 30%;
-	width: 50%;
-
+.counter{
+	float: right;
+	left: 10%;
+	top: -20%;
 }
 
-.cell {
-	width: 25%; 
-	height: 150px; 
-	display: inline-block;
-	border: 2px solid black;
+.theBox{
+	width: 500px;
+	margin: auto;
+	position: absolute;
+	top: 20%;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
 }
 
-.clearFix {
-	clear:both;
+.cell{
+	 width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin: 0px ;
+    padding: 0px ;
+    border-style: solid;
+    border-color: blue;
+    font-size: 46px;
+    text-align: center;
+    font-size: 137px;
+}
+
+
+
+.xclass {
+	background-color: red;
+}
+
+.oclass {
+	background-color: blue;
 }

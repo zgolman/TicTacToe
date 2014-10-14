@@ -8,6 +8,7 @@
 </head>
 <body ng-app="ticApp" ng-controller="TTTController">
 	<div class="wrapper">
+
 			<div class="header">
 				<p class="title">TicTacToe</p>
 			</div>
@@ -17,17 +18,18 @@
 			<div class="player2">
 				<p class="p2">2 PLAYER</p>
 			</div> 
-			<div class ="wrap">
-			    <div class="cell" ng-repeat="mySingleCell in board"
-			    ng-class="{clearFix: (mySingleCell.pos % 3) == 0}"
-			    ng-click="makeMove()">
-				{{mySingleCell.status }}
-		       </div>  
-			<div>
+			<div class="counter">MOVE COUNTER: {{movecounter}}</div>
+				<div class="theBox">
+				    <div ng-repeat="mySingleCell in board"
+				   		<div class="cell" ng-click="playerPicks(mySingleCell)"
+	          			ng-class="{xclass: mySingleCell.Status=='X',oclass: mySingleCell.Status =='O'}">
+	         			{{mySingleCell.Status}}
+	       				</div>
+			       </div>  
+				</div>
+			
 	</div>	
-
-
-		
 
 </body>
 </html>
+
