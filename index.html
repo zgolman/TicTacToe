@@ -24,10 +24,12 @@
 				   		class="cell" ng-click="playerPicks(mySingleCell)"
 	          			ng-class="{xclass: mySingleCell.status=='X',oclass: mySingleCell.status =='O'}">
 	         			{{mySingleCell.status}}
-	       				</div>
-			       </div>  
-				</div>
-			
+	       			</div>
+			    </div>  
+			</div>
+			<div class="result">
+				<p>{{xWin}} {{oWin}} {{draw}}
+			</div>	
 	</div>	
 
 </body>

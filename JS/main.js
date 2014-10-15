@@ -4,13 +4,13 @@ var ticApp = angular.module('ticApp', []);
 
 
 	$scope.board = [
-				{status:"", pos: 0, played:"False"},
+		{status:"", pos: 0, played:"False"},
         {status:"", pos: 1, played:"False"},
         {status:"", pos: 2, played:"False"},
-				{status:"", pos: 3, played:"False"},
+		{status:"", pos: 3, played:"False"},
         {status:"", pos: 4, played:"False"},
         {status:"", pos: 5, played:"False"},
-				{status:"", pos: 6, played:"False"},
+		{status:"", pos: 6, played:"False"},
         {status:"", pos: 7, played:"False"},
         {status:"", pos: 8, played:"False"}];
   
@@ -28,19 +28,36 @@ var ticApp = angular.module('ticApp', []);
 
 	
 
-console.log(($scope.board[0].status == $scope.board[1].status) && ($scope.board[1].status == $scope.board[2].status));
 
-if (($scope.board[0].status == $scope.board[1].status) && ($scope.board[1].status == $scope.board[2].status) ||
-    ($scope.board[3].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[5].status) ||
-    ($scope.board[6].status == $scope.board[7].status) && ($scope.board[7].status == $scope.board[8].status) ||
-    ($scope.board[0].status == $scope.board[3].status) && ($scope.board[3].status == $scope.board[6].status) ||
-    ($scope.board[1].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[7].status) ||
-    ($scope.board[2].status == $scope.board[5].status) && ($scope.board[5].status == $scope.board[8].status) ||
-    ($scope.board[0].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[8].status) ||
-    ($scope.board[2].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[7].status)) 
+if (($scope.board[0].status == "X" && $scope.board[0].status == $scope.board[1].status) && ($scope.board[1].status == $scope.board[2].status) ||
+    ($scope.board[3].status == "X" && $scope.board[3].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[5].status) ||
+    ($scope.board[6].status == "X" && $scope.board[6].status == $scope.board[7].status) && ($scope.board[7].status == $scope.board[8].status) ||
+    ($scope.board[0].status == "X" && $scope.board[0].status == $scope.board[3].status) && ($scope.board[3].status == $scope.board[6].status) ||
+    ($scope.board[1].status == "X" && $scope.board[1].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[7].status) ||
+    ($scope.board[2].status == "X" && $scope.board[2].status == $scope.board[5].status) && ($scope.board[5].status == $scope.board[8].status) ||
+    ($scope.board[0].status == "X" && $scope.board[0].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[8].status) ||
+    ($scope.board[2].status == "X" && $scope.board[2].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[6].status))
 {
-  
+    $scope.xWin = "X is the Winner";
+} 
+else if (($scope.board[0].status == "O" && $scope.board[0].status == $scope.board[1].status) && ($scope.board[1].status == $scope.board[2].status) ||
+    ($scope.board[3].status == "O" && $scope.board[3].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[5].status) ||
+    ($scope.board[6].status == "O" && $scope.board[6].status == $scope.board[7].status) && ($scope.board[7].status == $scope.board[8].status) ||
+    ($scope.board[0].status == "O" && $scope.board[0].status == $scope.board[3].status) && ($scope.board[3].status == $scope.board[6].status) ||
+    ($scope.board[1].status == "O" && $scope.board[1].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[7].status) ||
+    ($scope.board[2].status == "O" && $scope.board[2].status == $scope.board[5].status) && ($scope.board[5].status == $scope.board[8].status) ||
+    ($scope.board[0].status == "O" && $scope.board[0].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[8].status) ||
+    ($scope.board[2].status == "O" && $scope.board[2].status == $scope.board[4].status) && ($scope.board[4].status == $scope.board[6].status))
+ {
+    $scope.oWin = "O is the Winner";
+ }   
+ else if ($scope.movecounter == 9) {
+
+    $scope.draw = "It's a draw";
 }
+ else {
+    ""
+ }
     } ;
 
     // $scope.player1 = 'O'
