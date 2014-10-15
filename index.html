@@ -21,9 +21,9 @@
 			<div class="counter">MOVE COUNTER: {{movecounter}}</div>
 				<div class="theBox">
 				    <div ng-repeat="mySingleCell in board"
-				   		<div class="cell" ng-click="playerPicks(mySingleCell)"
-	          			ng-class="{xclass: mySingleCell.Status=='X',oclass: mySingleCell.Status =='O'}">
-	         			{{mySingleCell.Status}}
+				   		class="cell" ng-click="playerPicks(mySingleCell)"
+	          			ng-class="{xclass: mySingleCell.status=='X',oclass: mySingleCell.status =='O'}">
+	         			{{mySingleCell.status}}
 	       				</div>
 			       </div>  
 				</div>
