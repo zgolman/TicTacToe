@@ -1,22 +1,35 @@
-var ticApp = angular.module('ticApp', []);
+var ticApp = angular.module('ticApp', ["firebase"]);
 
- ticApp.controller('TTTController',["$scope", function ($scope){
+ ticApp.controller('TTTController', function ($scope, $firebase) {
 
+$scope.remoteGameContainer = 
+  $firebase(new Firebase("https://tictacoface.firebaseio.com/databaseGameContainer")) ;
 
-	$scope.board = [
-		{status:"", pos: 0, played:"False"},
-        {status:"", pos: 1, played:"False"},
-        {status:"", pos: 2, played:"False"},
-		{status:"", pos: 3, played:"False"},
-        {status:"", pos: 4, played:"False"},
-        {status:"", pos: 5, played:"False"},
-		{status:"", pos: 6, played:"False"},
-        {status:"", pos: 7, played:"False"},
-        {status:"", pos: 8, played:"False"}];
+    $scope.movecounter = 0 ;
+    
+    $scope.board = [
+        {status:"", pos: 0},
+        {status:"", pos: 1},
+        {status:"", pos: 2},
+        {status:"", pos: 3},
+        {status:"", pos: 4},
+        {status:"", pos: 5},
+        {status:"", pos: 6},
+        {status:"", pos: 7},
+        {status:"", pos: 8}];
   
-  $scope.movecounter = 0 ;
+     $scope.gameContainer = {
+    boardArray: $scope.board,
+    clickCounter: $scope.movecounter
+  } ;
 
-	$scope.playerPicks = function(oneCellObject) {
+  $scope.remoteGameContainer.$bind($scope, "gameContainer") ;
+
+   $scope.$watch('gameContainer', function() {
+    console.log('gameCountainer changed!') ;
+  }) ;
+
+    $scope.playerPicks = function(oneCellObject) {
     $scope.movecounter = $scope.movecounter + 1 ;
     console.log("Cell was: " + oneCellObject.status) ;
     if (($scope.movecounter % 2) == 1) {
@@ -26,7 +39,14 @@ var ticApp = angular.module('ticApp', []);
     } 
     console.log("Cell is now: " + oneCellObject.status) ;
 
-	
+    //if I'm X, I can click when it is an odd number//
+    //changing a cell does not affect move counter//
+    //make sure the game ends after 9 moves//
+    //create a reset button (with potential animation)//
+    //ensure CSS is proper when minimizing the screen//
+    //link youtube video to winning//
+    //create win counter//
+    //create how many turns the user has left//
 
 
 if (($scope.board[0].status == "X" && $scope.board[0].status == $scope.board[1].status) && ($scope.board[1].status == $scope.board[2].status) ||
@@ -76,7 +96,7 @@ else if (($scope.board[0].status == "O" && $scope.board[0].status == $scope.boar
     //   if position = 0 && 1 && 2
 
 
-}]);
+});
 
 
     // var positionX = $scope.board.pos = "X";
@@ -84,10 +104,10 @@ else if (($scope.board[0].status == "O" && $scope.board[0].status == $scope.boar
 
 
  // $scope.makeMove = function(){
-	// 			alert(this.$index);
-	// 			alert(mySingleCell.status)
-	// 			};
+    //          alert(this.$index);
+    //          alert(mySingleCell.status)
+    //          };
 
-		// $scope.testJS = function() {
+        // $scope.testJS = function() {
   //   console.log('Correctly accessing JS function.') ;
   //    } ;
