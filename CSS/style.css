@@ -15,7 +15,7 @@ div {
 	height:99%;
 	border: 1px solid black;
 	margin:1%;
-	background:orange;
+	background:teal;
 }
 
 .header {
@@ -30,38 +30,44 @@ div {
 	position: relative;
 	bottom: 99%;
 	font-size: 68px;
+	color: white;
 }
 
 .player1{
 	width:14%;
 	height:60%;
 	float:left;
+	color: white;
 }
 
 .player2{
 	width:14%;
 	height:60%;
 	float: right;
+	color: white;
+	right:3%;
 }
 
 .p1{
-transform: rotate(90deg);
+/*transform: rotate(90deg);*/
 font-size: 46px;
 position: relative;
 top: 37%;
 left: 3%;
-text-align: right;
+text-align: center;
 margin-left: 20%;
+display: inline-block;
 }
 
 .p2{
-transform: rotate(90deg);
+/*transform: rotate(90deg);*/
 font-size: 46px;
 position: relative;
 top: 37%;
 left: 3%;
-text-align: right;
+text-align: center;
 margin-right: 20%;
+display: inline-block;
 }
 
 .counter{
@@ -88,7 +94,7 @@ margin-right: 20%;
     margin: 0px ;
     padding: 0px ;
     border-style: solid;
-    border-color: blue;
+    border-color: white;
     text-align: center;
     font-size: 137px;
 }
@@ -100,7 +106,8 @@ margin-right: 20%;
 }
 
 .oclass {
-	background-color: blue;
+	background-color: black;
+	color: white;
 }
 
 .result {
@@ -108,7 +115,7 @@ margin-right: 20%;
 	height: 10%;
 	left: 20%;
 	font-size: 42px;
-	color: blue;
+	color: white;
 	bottom: 20%;
 	text-align: center;
 }
