@@ -30,9 +30,9 @@ $scope.remoteGameContainer =
   }) ;
 
     $scope.playerPicks = function(oneCellObject) {
-    $scope.movecounter = $scope.movecounter + 1 ;
+    $scope.gameContainer.clickCounter ++ ;
     console.log("Cell was: " + oneCellObject.status) ;
-    if (($scope.movecounter % 2) == 1) {
+    if (($scope.gameContainer.clickCounter % 2) == 0) {
       oneCellObject.status = "X" ;  
     } else {
       oneCellObject.status = "O" ;
@@ -43,8 +43,6 @@ $scope.remoteGameContainer =
     
 
     //if I'm X, I can click when it is an odd number//
-    //changing a cell does not affect move counter//
-    //make sure the game ends after 9 moves//
     //create a reset button (with potential animation)//
     //ensure CSS is proper when minimizing the screen//
     //link youtube video to winning//
@@ -62,6 +60,7 @@ if (($scope.gameContainer.boardArray[0].status == "X" && $scope.gameContainer.bo
     ($scope.gameContainer.boardArray[2].status == "X" && $scope.gameContainer.boardArray[2].status == $scope.gameContainer.boardArray[5].status) && ($scope.gameContainer.boardArray[5].status == $scope.gameContainer.boardArray[8].status) ||
     ($scope.gameContainer.boardArray[0].status == "X" && $scope.gameContainer.boardArray[0].status == $scope.gameContainer.boardArray[4].status) && ($scope.gameContainer.boardArray[4].status == $scope.gameContainer.boardArray[8].status) ||
     ($scope.gameContainer.boardArray[2].status == "X" && $scope.gameContainer.boardArray[2].status == $scope.gameContainer.boardArray[4].status) && ($scope.gameContainer.boardArray[4].status == $scope.gameContainer.boardArray[6].status))
+
 {
     $scope.xWin = "X is the Winner";
 } 
@@ -85,7 +84,27 @@ else if (($scope.gameContainer.boardArray[0].status == "O" && $scope.gameContain
  }
     } ;
 
+// .directive('popup', function() {
+//   var p = {
+//       link : function(scope, iElement, iAttrs){
+//            //code to wrap the div (iElement) with a abs pos div (parentDiv)
+//           // code to add a mask layer div behind 
+//           // if the parent is already there, then skip adding it again.
+//          //use jquery ui to make it dragable etc.
+//           scope.watch(showPopup, function(oWin, xWin){
+//                if(oWin === true){
+//                    $(parentDiv).show();
+//                  } 
+//               else{
+//                  $(parentDiv).hide();
+//                 }
+//           });
+//       }
 
+
+//    }
+//   return p;
+// });
     
 
 
