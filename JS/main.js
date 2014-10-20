@@ -84,7 +84,7 @@ else if (($scope.gameContainer.boardArray[0].status == "O" && $scope.gameContain
  {
     $scope.gameContainer.fboWin = "O is the Winner";
  }   
- else if ($scope.movecounter == 9) {
+ else if ($scope.gameContainer.clickCounter == 9) {
 
     $scope.gameContainer.fbdraw = "It's a draw";
 }

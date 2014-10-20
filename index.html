@@ -21,7 +21,7 @@
 				<p class="title">TicTacToe!</p>
 			</div>
 			<div class="player1">
-				<p class="p1">PLAYER1</p>
+				<p class="p1">PLAYER 1</p>
 			</div>
 			<div class="player2">
 				<p class="p2">PLAYER 2</p>
@@ -37,15 +37,20 @@
 			    </div>  
 			</div>
 
-			<div class = "video" ng-if="gameContainer.fboWin">
-			  <iframe width="840" height="520" src="https://www.youtube.com/embed/QzIN3EgBIHg?autoplay=1" frameborder="0" allowfullscreen></iframe>
-
-			  <!-- <video  width="320" height="240" controls autoplay>
-			  <source src="Images/o face.mp4" type="video/mp4">
-			  </video> -->
-			</div>
 			
-				
+			<div class = "video">
+				<div class = "O" ng-if="gameContainer.fboWin">
+				  <iframe width="840" height="520" src="https://www.youtube.com/embed/QzIN3EgBIHg?autoplay=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+				{{fbdraw}}
+				<div class = "X" ng-if="gameContainer.fbxWin">
+				  <iframe width="840" height="520" src="https://www.youtube.com/embed/Q-1uAJKYq5M?autoplay=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+
+				<div class = "D" ng-if="gameContainer.fbdraw">
+				  <iframe width="840" height="520" src="https://www.youtube.com/embed/8Md-bJ8gutA?autoplay=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
 			    
 		
 	        </div>
