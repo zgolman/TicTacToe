@@ -7,6 +7,8 @@ var ticApp = angular.module('ticApp', ["firebase"]);
 $scope.remoteGameContainer = 
   $firebase(new Firebase("https://tictacoface.firebaseIO.com/databaseGameContainer")) ;
 
+   
+
     $scope.movecounter = 0 ;
     $scope.oWin = "";
     $scope.xWin = "";
@@ -47,18 +49,6 @@ $scope.remoteGameContainer =
     } 
     console.log("Cell is now: " + oneCellObject.status) ;
 
-    
-    
-
-    //if I'm X, I can click when it is an odd number//
-    //create a reset button (with potential animation)//
-    //ensure CSS is proper when minimizing the screen//
-    //link youtube video to winning//
-    //create win counter//
-    //create how many turns the user has left//
-    //create chat between the 2 players//
-
-
 
 if (($scope.gameContainer.boardArray[0].status == "X" && $scope.gameContainer.boardArray[0].status == $scope.gameContainer.boardArray[1].status) && ($scope.gameContainer.boardArray[1].status == $scope.gameContainer.boardArray[2].status) ||
     ($scope.gameContainer.boardArray[3].status == "X" && $scope.gameContainer.boardArray[3].status == $scope.gameContainer.boardArray[4].status) && ($scope.gameContainer.boardArray[4].status == $scope.gameContainer.boardArray[5].status) ||
@@ -93,9 +83,14 @@ else if (($scope.gameContainer.boardArray[0].status == "O" && $scope.gameContain
  }
     } ;
 
+  
 
+ $scope.resetForm = function ()
+    {
+      location.reload();
+    };
 
-
+       
 
 });
 

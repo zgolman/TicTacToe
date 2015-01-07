@@ -124,3 +124,13 @@ display: inline-block;
 	bottom:82%;
 	left: 15%
 }
+
+.reset {
+	margin-left: 45%;
+	margin-top: -4%;
+
+}
+
+.btn {
+	font-size: 20px;
+}

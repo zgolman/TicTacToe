@@ -17,8 +17,13 @@
 </head>
 <body ng-controller="TTTController" ng-model = "gameContainer">
 	<div class="wrapper">
+			
+
 			<div class="header">
 				<p class="title">TicTacToe!</p>
+			</div>
+			<div class = "reset">
+				<button class="btn" type="reset" ng-click="resetForm()">New Game</button>
 			</div>
 			<div class="player1">
 				<p class="p1">PLAYER 1</p>
@@ -26,17 +31,17 @@
 			<div class="player2">
 				<p class="p2">PLAYER 2</p>
 			</div> 
-			<div class="counter"></div>
-				<div class="theBox">
-				    <div ng-repeat="mySingleCell in gameContainer.boardArray">
-				   		<div class="cell" ng-click="playerPicks(mySingleCell)"
-	          			  ng-class="{xclass: mySingleCell.status=='X',oclass: mySingleCell.status =='O'}">
-	         		   	  {{mySingleCell.status}}
-	         		   	</div>
-	       			</div>
-			    </div>  
+					<div class="theBox">
+					    <div ng-repeat="mySingleCell in gameContainer.boardArray">
+					   		<div class="cell" ng-click="playerPicks(mySingleCell)"
+		          			  ng-class="{xclass: mySingleCell.status=='X',oclass: mySingleCell.status =='O'}">
+		         		   	  {{mySingleCell.status}}
+		         		   	</div>
+		       			</div>
+				    </div>  	
 			</div>
 
+			
 			
 			<div class = "video">
 				<div class = "O" ng-if="gameContainer.fboWin">
@@ -48,11 +53,11 @@
 				</div>
 
 				<div class = "D" ng-if="gameContainer.fbdraw">
-				  <iframe width="840" height="520" src="https://www.youtube.com/embed/8Md-bJ8gutA?autoplay=1" frameborder="0" allowfullscreen></iframe>
+				  <iframe width="840" height="520" src="https://www.youtube.com/embed/5hfYJsQAhl0?autoplay=1" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 			    
-		
-	        </div>
+			   
+	</div>
 
 </html>
